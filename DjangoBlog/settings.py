@@ -97,15 +97,17 @@ WSGI_APPLICATION = 'DjangoBlog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        #'ENGINE': 'django.db.backends.mysql',
+        'ENGINE':'django.db.backends.postgresql_psycopg2',
         'NAME': 'djangoblog',
-        'USER': os.environ.get('DJANGO_MYSQL_USER'),
-        'PASSWORD': os.environ.get('DJANGO_MYSQL_PASSWORD'),
-        'HOST': os.environ.get('DJANGO_MYSQL_HOST'),
-        'PORT': 3306,
-        'OPTIONS': {'charset': 'utf8mb4'},
+        'USER': 'postgres',#os.environ.get('DJANGO_PGSQL_USER'),
+        'PASSWORD': 'xxx',#os.environ.get('DJANGO_PGSQL_PASSWORD'),
+        'HOST': '127.0.0.1',#os.environ.get('DJANGO_PGSQL_HOST'),
+        'PORT': 5432, #int(os.environ.get('DJANGO_PGSQL_PORT')),
+        #'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
